@@ -1,7 +1,5 @@
-import java.util.Random;
-
 /**
- * Created by Joshua on 10/12/2017.
+ * Enum for multiple choice question options.
  */
 public enum MultipleChoiceOption {
     A, B, C, D, E, F, G;

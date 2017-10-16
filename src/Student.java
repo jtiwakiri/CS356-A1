@@ -1,5 +1,5 @@
 /**
- * Created by Joshua on 10/12/2017.
+ * Implementation of Voter.
  */
 public class Student implements Voter {
     private long idNum;
