@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -10,11 +11,13 @@ import java.util.TreeMap;
 public class Question<T> {
     private int id;
     private String questionText;
+    private String[] answersText;
     private Map<Voter, Answer> votes;
     private Map<Answer, Integer> totals;
 
-    public Question(String q) {
+    public Question(String q, String[] a) {
         this.questionText = q;
+        this.answersText = a;
         id = q.hashCode();
         this.votes = (Map<Voter, Answer>) new TreeMap<Voter, T>();
         this.totals = new TreeMap<Answer, Integer>();
@@ -62,5 +65,19 @@ public class Question<T> {
      */
     public String getQuestionText() {
         return questionText;
+    }
+
+    /**
+     * @return String array of the answer options.
+     */
+    public String[] getAnswersText() {
+        return Arrays.copyOf(this.answersText, this.answersText.length);
+    }
+
+    /**
+     * @return The number of answer options for this question.
+     */
+    public int getNumAnswers() {
+        return this.answersText.length;
     }
 }
